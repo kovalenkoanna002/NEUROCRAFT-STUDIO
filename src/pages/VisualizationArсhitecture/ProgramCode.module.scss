@@ -1,0 +1,108 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 12px;
+}
+
+.examplesLabel {
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 2px;
+}
+
+.exampleChip {
+  padding: 6px 14px;
+  border: 1px solid #c7d2fe;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #1d4ed8;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    transform 0.1s ease;
+
+  &:hover {
+    background: #dbe4ff;
+    border-color: #1d4ed8;
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #1d4ed8;
+    outline-offset: 2px;
+  }
+}
+
+.form__editor {
+  background-color: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.header {
+  background-color: #e8efff;
+  color: #1e3a8a;
+  padding: 1px 20px;
+  font-weight: 500;
+  font-size: 16px;
+  border-bottom: 1px solid #ccc;
+}
+
+.code_editor {
+  height: 400px;
+}
+
+.codeEditor {
+  height: 100% !important;
+  width: 100%;
+  border: none;
+}
+
+.submitSection {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hint {
+  margin: 0;
+  flex: 1 1 240px;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: #94a3b8;
+}
+
+.hintWarn {
+  color: #b45309;
+}
+
+.submitButton {
+  flex-shrink: 0;
+  padding: 8px 18px;
+  font-size: 14px;
+  white-space: nowrap;
+}

@@ -1,0 +1,38 @@
+@use "../../styles/global" as g;
+
+.code-generation {
+  &__title {
+    color: #1e3a8a;
+    font-family: Montserrat;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include g.vp-767 {
+      font-size: 28px;
+      line-height: 130%;
+    }
+  }
+
+  &__description {
+    color: #1e3a8a;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 40px;
+
+    @include g.vp-767 {
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+  }
+
+  &__architecture {
+    border-bottom: 1px solid #1e3a8a;
+    padding-bottom: 32px;
+    margin-bottom: 60px;
+  }
+}

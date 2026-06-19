@@ -1,0 +1,121 @@
+@use "../../styles/global" as g;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-family: g.$ff-main;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+  background: transparent;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  @include g.vp-767 {
+    font-size: 16px;
+    padding: 10px 16px;
+  }
+
+  &--filled {
+    background-color: g.$color-resolution-blue;
+    color: #fff;
+
+    &:hover {
+      background-color: transparent;
+      outline: 1px solid g.$color-cornflower-blue;
+      color: g.$color-cornflower-blue;
+    }
+
+    &:focus-visible {
+      outline: 1px solid g.$color-cerulean-blue;
+      outline-offset: 1px;
+    }
+
+    &:active {
+      background-color: g.$color-cerulean-blue;
+      color: #fff;
+    }
+  }
+
+  &--outline-blue {
+    border: 1px solid g.$color-resolution-blue;
+    color: g.$color-resolution-blue;
+
+    &:hover {
+      background-color: g.$color-cornflower-blue;
+      border: 1px solid g.$color-cornflower-blue;
+      color: #fff;
+    }
+
+    &:focus-visible {
+      background-color: g.$color-cerulean-blue;
+      border: 1px solid g.$color-cerulean-blue;
+      color: #fff;
+    }
+
+    &:active {
+      background-color: g.$color-cerulean-blue;
+      border: 1px solid g.$color-cerulean-blue;
+      color: #fff;
+    }
+  }
+
+  &--outline-white {
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 14px;
+
+    @include g.vp-1023 {
+      padding: 6px 8px;
+      font-size: 12px;
+    }
+
+    &:hover {
+      background-color: #fff;
+      color: g.$color-sapphire;
+    }
+  }
+  &--link {
+    color: #fff;
+    padding: 12px 50px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    border-radius: 60px;
+    border: 1px solid #fff;
+    transition: color 0.3s ease-in, background 0.3s ease-in;
+
+    @include g.vp-1023 {
+      padding: 10px 30px;
+      font-size: 16px;
+    }
+
+    @include g.vp-767 {
+      font-size: 14px;
+      padding: 10px 16px;
+    }
+
+    &:hover {
+      background: #fff;
+      color: g.$color-cerulean-blue;
+    }
+
+    &:focus-visible {
+      background: #fff;
+      color: g.$color-cerulean-blue;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@use "./mixins" as m;
+
+.container {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  @include m.vp-1023 {
+    padding: 0 32px;
+  }
+
+  @include m.vp-767 {
+    padding: 0 30px;
+  }
+}

@@ -1,0 +1,119 @@
+@use "../../../styles/global" as g;
+
+.features-wrapper {
+
+  padding: 60px 0;
+  background: #dedede;
+
+  @include g.vp-767 {
+    padding: 40px 0;
+  }
+
+  &__title {
+    color: #00c;
+    font-family: Montserrat;
+    font-size: clamp(24px, 5vw, 40px);
+    line-height: 1.4;
+    font-style: normal;
+    font-weight: 300;
+    margin: 0 0 30px 0;
+    text-transform: uppercase;
+
+    @include g.vp-1023 {
+      margin: 0 0 20px 0;
+    }
+
+    @include g.vp-767 {
+      margin: 0 0 15px 0;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 20px;
+
+    @include g.vp-1023 {
+      gap: 15px;
+    }
+
+    @include g.vp-767 {
+      gap: 10px;
+    }
+  }
+
+  &__btn {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    border-radius: 50px;
+    padding: 12px;
+    border: 1px solid #00c;
+    background: transparent;
+    cursor: pointer;
+
+    @include g.vp-1023 {
+      padding: 10px;
+    }
+
+    @include g.vp-767 {
+      padding: 8px;
+    }
+
+    &:hover {
+      background: #00c;
+
+      & .features-wrapper__icon {
+        color: #fff;
+      }
+    }
+  }
+
+  &__icon {
+    color: #00c;
+    transition: color 0.2s ease;
+  }
+
+  &__page {
+    animation: featureSlide 0.45s ease both;
+  }
+
+  &__indicator {
+    display: flex;
+    gap: 5px;
+
+    align-items: center;
+  }
+
+  &__dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #00c;
+  }
+
+  &__line {
+    width: 75px;
+    height: 3px;
+    border-radius: 3px;
+    background: #00c;
+  }
+}
+
+@keyframes featureSlide {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .features-wrapper__page {
+    animation: none;
+  }
+}

@@ -1,0 +1,38 @@
+.codeEditor {
+  width: 100%;
+  height: auto;
+}
+
+.form__editor {
+  position: relative;
+  margin-top: 50px;
+  width: 700px;
+}
+
+.code_editor {
+  margin-bottom: 20px;
+  border-radius: 10px 10px 10px 10px !important;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  padding-left: 25px;
+  width: 700px;
+  font-size: 12px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #2f2f2f;
+  color: #cdcdcd;
+}
+
+.copyButton {
+  background-color: #2f2f2f;
+  color: #cdcdcd;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}

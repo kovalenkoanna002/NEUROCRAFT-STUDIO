@@ -1,0 +1,260 @@
+.knowledgePage {
+  display: flex;
+  position: relative;
+
+  background-color: #f9fafc;
+}
+
+.burger {
+  position: absolute;
+  top: 14px;
+  left: 22px;
+  z-index: 50;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d6deeb;
+  border-radius: 12px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: #f1f5f9;
+  }
+}
+
+.iconBurger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  i {
+    display: block;
+    width: 22px;
+    height: 2.5px;
+    background: #1e3a8a;
+    border-radius: 2px;
+  }
+}
+
+.iconClose {
+  position: relative;
+  width: 22px;
+  height: 22px;
+
+  i {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 22px;
+    height: 2.5px;
+    margin-top: -1.25px;
+    background: #1e3a8a;
+    border-radius: 2px;
+  }
+
+  i:first-child {
+    transform: rotate(45deg);
+  }
+
+  i:last-child {
+    transform: rotate(-45deg);
+  }
+}
+
+.sidebarHidden {
+  display: none;
+}
+
+.sidebar {
+  width: 340px;
+  flex-shrink: 0;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  padding: 5rem 1.5rem 1.5rem;
+  overflow-y: auto;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .search {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.55rem 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: Montserrat, sans-serif;
+
+    &:focus {
+      outline: none;
+      border-color: #1a4fd3;
+    }
+  }
+
+  .badge {
+    margin-left: 6px;
+    padding: 1px 6px;
+    font-size: 0.65rem;
+    border-radius: 6px;
+    background: #f1f5f9;
+    color: #94a3b8;
+    vertical-align: middle;
+  }
+
+  .subDisabled {
+    color: #aab2c0 !important;
+    cursor: default !important;
+
+    &:hover {
+      background-color: transparent !important;
+    }
+  }
+
+  .section {
+    .sectionTitle {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      color: #333;
+      padding: 0.5rem 0;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #1a4fd3;
+      }
+    }
+
+    .subsectionList {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        font-size: 0.95rem;
+        padding: 0.4rem 0.75rem;
+        cursor: pointer;
+        border-radius: 6px;
+        color: #444;
+
+        &:hover {
+          background-color: #eef2f9;
+        }
+
+        &.active {
+          background-color: #dce7ff;
+          color: #1a4fd3;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  flex-grow: 1;
+  padding: 5rem 3rem 2rem;
+  overflow-y: auto;
+  background-color: #ffffff;
+  min-width: 0;
+
+  .placeholder {
+    color: #777;
+    font-size: 1rem;
+  }
+
+  .intro {
+    max-width: 720px;
+
+    h2 {
+      color: #1e3a8a;
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: #1d4ed8;
+    }
+  }
+
+  .article {
+    max-width: 800px;
+
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: #444;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1.5rem;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    pre {
+      background: #f4f4f4;
+      padding: 1rem;
+      border-radius: 6px;
+      font-family: monospace;
+      overflow-x: auto;
+    }
+
+    img {
+      max-width: 100%;
+      margin-top: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .knowledgePage {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .content {
+
+    padding: 5rem 1.5rem 1.5rem;
+  }
+}

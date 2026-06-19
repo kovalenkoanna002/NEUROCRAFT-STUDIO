@@ -1,0 +1,139 @@
+@use "../../styles/global" as g;
+
+.registration-form {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  box-sizing: border-box;
+  background-image: url("/images/login/background-login.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  & > :global(.container) {
+    width: 100%;
+    max-width: 820px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 2;
+    display: inline-flex;
+    color: g.$color-white;
+
+    @include g.vp-767 {
+      top: 16px;
+      left: 16px;
+    }
+  }
+
+  &__logo-icon {
+    width: clamp(150px, 16vw, 240px);
+    height: auto;
+  }
+
+  &__title {
+    color: g.$color-white;
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(20px, 5vw, 24px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    text-align: center;
+    margin: 0 0 25px 0;
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    padding: 96px 160px 80px;
+    background-color: rgba(217, 217, 217, 0.3);
+    backdrop-filter: blur(15px);
+    border-radius: 16px;
+    border: 1px solid g.$color-white;
+
+    @include g.vp-1023 {
+      padding: 84px 60px 56px;
+    }
+    @include g.vp-767 {
+      padding: 68px 28px 36px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    width: 100%;
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+    color: #0d215b;
+    background-color: g.$color-white;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: g.$color-cornflower-blue;
+      border: 1px solid g.$color-cornflower-blue;
+      color: g.$color-white;
+    }
+    &:focus-visible {
+      background-color: g.$color-cerulean-blue;
+      color: g.$color-white;
+      outline: 2px solid g.$color-cerulean-blue;
+      outline-offset: 2px;
+    }
+    &:active {
+      background-color: g.$color-cerulean-blue;
+      color: g.$color-white;
+    }
+  }
+
+  &__register {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__register-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 100%;
+    margin-top: -10px;
+
+    &:hover {
+      color: g.$color-cornflower-blue;
+    }
+    &:focus-visible {
+      color: g.$color-cerulean-blue;
+      outline: 2px solid g.$color-cerulean-blue;
+      outline-offset: 2px;
+    }
+    &:active {
+      color: g.$color-cerulean-blue;
+    }
+  }
+}
+
+.registration-form__error {
+  color: #ff8a8a;
+  font-size: 14px;
+  margin: 0;
+}

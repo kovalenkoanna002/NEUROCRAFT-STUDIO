@@ -1,0 +1,50 @@
+.term {
+  border-bottom: 1px dashed #2563eb;
+  color: #1d4ed8;
+  cursor: help;
+}
+
+.termLink {
+  cursor: pointer;
+}
+
+.tip {
+  position: fixed;
+  z-index: 1000;
+  padding: 10px 12px;
+  background: #0f172a;
+  color: #f1f5f9;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  pointer-events: auto;
+  transform: translateY(-100%);
+
+  &.tipBelow {
+    transform: translateY(0);
+  }
+
+  b {
+    color: #93c5fd;
+  }
+}
+
+.tipLink {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #93c5fd;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

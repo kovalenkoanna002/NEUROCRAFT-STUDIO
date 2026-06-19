@@ -1,0 +1,239 @@
+@use "../../../styles/global" as g;
+
+.hero {
+  position: relative;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin-top: -112px;
+  display: flex;
+  align-items: center;
+
+  @include g.vp-1023 {
+    margin-top: -96px;
+  }
+  @include g.vp-767 {
+    margin-top: -91px;
+  }
+
+  &__background {
+    width: 100%;
+  }
+
+  &__decor {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  &__net {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0;
+    animation: fadeIn 1.6s ease forwards 0.5s;
+  }
+
+  &__link {
+    stroke: rgba(160, 190, 255, 0.22);
+    stroke-width: 1;
+    stroke-dasharray: 3 7;
+    animation: heroFlow 1.4s linear infinite;
+  }
+
+  &__node {
+    fill: rgba(255, 255, 255, 0.85);
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: heroPulse 3s ease-in-out infinite;
+  }
+
+  &__content {
+
+    padding: 150px 0 80px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+
+    @include g.vp-1023 {
+      padding: 120px 0 60px;
+    }
+    @include g.vp-767 {
+      padding: 105px 0 40px;
+    }
+  }
+
+  &__title {
+    font-family: Montserrat;
+    font-size: clamp(32px, 7vw, 90px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 85px 0;
+
+    background: linear-gradient(
+      100deg,
+      #ffffff 0%,
+      #9ec5ff 30%,
+      #c9b8ff 55%,
+      #ffffff 80%
+    );
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: introSlideInLeft ease-in 1.5s forwards 1s,
+      heroGradient 7s linear infinite 1s;
+    opacity: 0;
+
+    @include g.vp-1023 {
+      margin: 0 0 40px 0;
+    }
+    @include g.vp-767 {
+      margin: 0 0 20px 0;
+    }
+  }
+
+  &__subtitle {
+    color: g.$color-white;
+    font-family: Montserrat;
+    font-size: clamp(18px, 3vw, 36px);
+    line-height: clamp(26px, 4vw, 52px);
+    font-style: normal;
+    font-weight: 300;
+    max-width: 844px;
+    opacity: 0;
+    animation: headingSlideInDown ease-in 0.7s forwards 2.5s;
+  }
+
+  &__icon {
+    position: absolute;
+    right: 0px;
+    top: 62%;
+
+    width: clamp(150px, 30vw, 457px);
+    height: auto;
+    max-width: 45%;
+    transform: translateY(-50%);
+    z-index: 0;
+    transform-origin: center;
+    opacity: 0;
+    animation: spin 30s linear infinite, fadeIn 1s ease-in forwards 3s;
+
+    @include g.vp-767 {
+      top: 50%;
+      max-width: 55%;
+    }
+  }
+
+  &__button {
+    opacity: 0;
+    animation: SlideUp ease-in 0.7s forwards 3s;
+    transition: box-shadow 0.3s ease, filter 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 8px 28px rgba(120, 160, 255, 0.5);
+      filter: brightness(1.08);
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: translateY(-50%) rotate(0deg);
+    }
+    to {
+      transform: translateY(-50%) rotate(360deg);
+    }
+  }
+
+  @keyframes introSlideInLeft {
+    0% {
+      transform: translateX(-750px) scale(1.2);
+    }
+
+    50% {
+      transform: translateX(0) scale(1.2);
+    }
+    100% {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes headingSlideInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes SlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes heroFlow {
+    to {
+      stroke-dashoffset: -20;
+    }
+  }
+
+  @keyframes heroPulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 1;
+    }
+  }
+
+  @keyframes heroGradient {
+    to {
+      background-position: 220% center;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__net,
+    .hero__link,
+    .hero__node,
+    .hero__title,
+    .hero__icon {
+      animation: none;
+    }
+    .hero__net {
+      opacity: 1;
+    }
+    .hero__title {
+      opacity: 1;
+    }
+  }
+}

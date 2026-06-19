@@ -1,0 +1,60 @@
+@use "../../../styles/global" as g;
+
+.editor {
+  padding: 60px 0;
+  background: #dedede;
+  position: relative;
+
+  &__title-right {
+    @include g.vp-1023 {
+      display: none;
+    }
+    position: absolute;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-transform: uppercase;
+    margin: 0;
+
+    top: 0px;
+    right: 0px;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #00c;
+    font-family: Montserrat;
+    font-size: clamp(36px, 5vw, 60px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2;
+
+    &::before {
+      content: attr(data-text);
+      position: absolute;
+      inset: 0;
+      color: #dedede;
+      -webkit-text-fill-color: #dedede;
+      -webkit-text-stroke: 0;
+      pointer-events: none;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__title {
+    color: #00c;
+    font-family: Montserrat;
+    font-size: clamp(24px, 5vw, 40px);
+    line-height: 1.4;
+    font-style: normal;
+    font-weight: 300;
+
+    margin: 0 0 120px 0;
+    text-transform: uppercase;
+  }
+
+  &__img {
+    box-shadow: 15px 15px 40px 10px rgba(0, 0, 0, 0.5);
+  }
+}

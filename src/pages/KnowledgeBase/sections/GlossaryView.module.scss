@@ -1,0 +1,41 @@
+.search {
+  width: 100%;
+  max-width: 360px;
+  padding: 10px 14px;
+  margin-bottom: 24px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: Montserrat, sans-serif;
+
+  &:focus {
+    outline: none;
+    border-color: #1d4ed8;
+  }
+}
+
+.list {
+  margin: 0;
+}
+
+.item {
+  padding: 12px 0;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.term {
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 4px;
+}
+
+.def {
+  margin: 0;
+  color: #334155;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.empty {
+  color: #64748b;
+}
